@@ -17,7 +17,7 @@
     gradient.addColorStop(0,'#ffffff');  
 
     setupAudioNodes();
-    loadsound("emily.mp3");
+    loadsound("testtone1.mp3");
   
     function setupAudioNodes() {
       window.javascriptnode = context.createJavaScriptNode(2048, 1, 1);
