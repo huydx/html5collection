@@ -45,13 +45,16 @@ BufferLoader.prototype.load = function() {
   this.loadBuffer(this.urlList[i], i);
 }
 
+function shoot(type, rounds, interval, random) {
+  window.gun.shootRound(type, rounds, interval, random);
+}
+
 function MachineGun(context) {
     var ctx = this;
     var loader = new BufferLoader(context, ['m4a1.mp3', 'm1-garand.mp3'], onLoaded);
 
     function onLoaded(buffers) {
       ctx.buffers = buffers;
-      ctx.shootRound(1, 100, 0.2);
     };
     loader.load();
 }
@@ -81,7 +84,7 @@ MachineGun.prototype.makeSource = function (buffer) {
 };
 
 function load() {
-  var gun = new MachineGun(context);
+  window.gun = new MachineGun(context);
 }
 var context = new webkitAudioContext();  
 load();

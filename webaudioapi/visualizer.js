@@ -75,7 +75,7 @@
       var average = getAverageVolume(array);
 
       ctx.clearRect(0, 0, 60, 130);
-      ctx.fillStyle=gradient;
+      ctx.fillStyle="#00FFFF";
       ctx.fillRect(0,130-average,25,130);
     }
   }

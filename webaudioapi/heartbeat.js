@@ -12,7 +12,7 @@ window.requestAnimFrame = (function(callback) {
 var context = new webkitAudioContext(), 
   ground = document.getElementById("ground"),
   dancer = new Dancer(),
-  soundUrl = "emily.mp3",
+  soundUrl = "testtone1.mp3",
   canvasCtx = ground.getContext("2d"),
   fps = 15,
   objsToDraw = [], //list objects
@@ -21,6 +21,9 @@ var context = new webkitAudioContext(),
 
 //define functions
 function draw() {
+  canvasCtx.canvas.width = window.innerWidth;
+  canvasCtx.canvas.height = window.innerHeight;
+
   var len = objsToDraw.length;
   for (var i = 0; i < len; i++) {
     //increment width of circle
@@ -69,7 +72,8 @@ function addRandomObj() {
   var canvasWidth = ground.width;
   var canvasHeight = ground.height;
   rand_x = Math.floor((Math.random() * canvasWidth))
-  rand_y = Math.floor((Math.random() * canvasHeight))
+  rand_y = 100;
+  //rand_y = Math.floor((Math.random() * canvasHeight))
 
   addNewObj(rand_x, rand_y)
 }
@@ -99,7 +103,7 @@ function initAudio() {
     
     },
 
-    threshold: 0.3
+    threshold: 0.35
   }).on();  
 
   dancer.load({src: soundUrl})
